@@ -1,22 +1,21 @@
-																			   #include<LPC214X.h>
-void  delay(){
-	unsigned int i=0;
-	while(i<200000){
-		i++;
-	}
+#include<LPC214x.h>
+delay(){
+unsigned int i=0;
+while(i<200000){
+i++;
+}
 }
 int main(){
-	//set the direction as output
-	IODIR0 |=(0x01<<16);
-	while(1){
-	//turn on led
-		IOSET0 |=(0x01<<16);
-	delay();
-	
-	//turn off led
-	IOCLR0 |=(0x01<<16);
+// set the direction as output
+IODIR0 |=(0x01<<16)|(0x01<<00)|(0x01<<01)|(0x01<<02)|(0x01<<03)|(0x01<<04)|(0x01<<05)|(0x01<<06)|(0x01<<07);
+while(1){
+//turn on led
+IOSET0 |=(0x01<<16)|(0x01<<00)|(0x01<<01)|(0x01<<02)|(0x01<<03)|(0x01<<04)|(0x01<<05)|(0x01<<06)|(0x01<<07);
+delay();
 
-	//turn off led
-		delay();
-	}
+//turn of led
+IOCLR0 |=(0x01<<16)|(0x01<<00)|(0x01<<01)|(0x01<<02)|(0x01<<03)|(0x01<<04)|(0x01<<05)|(0x01<<06)|(0x01<<07);
+delay();
+
+}
 }
